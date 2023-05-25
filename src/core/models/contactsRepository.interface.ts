@@ -4,6 +4,6 @@ export interface contactsRepositoryModel{
     findall(): Promise<ContactsEntityModel[]>;
     findByName(name:string): Promise<ContactsEntityModel>;
     findByNumber(phoneNumber:string): Promise<ContactsEntityModel>;
-    updateNumber(name:string): Promise<void>;
+    updateNumber(name:string,phoneNumber:string): Promise<void>;
     deleteByNumber(phoneNumber:string): Promise<void>;
 }

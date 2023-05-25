@@ -17,19 +17,22 @@ export class contactsRepository implements contactsRepositoryModel{
     }
     
     async findall(): Promise<ContactsEntityModel[]> {
-        throw new Error("Method not implemented.");
+        const allcontactsEntity = await this.contactsEntityRepository.find();
+        return allcontactsEntity.map((contactsEntity) => this.toContacts(contactsEntity));
     }
     async findByName(name: string): Promise<ContactsEntityModel> {
-        throw new Error("Method not implemented.");
+        const contactsEntity = await this.contactsEntityRepository.findOneByName(name);
+        return this.toContacts(contactsEntity);
     }
     async findByNumber(phoneNumber: string): Promise<ContactsEntityModel> {
-        throw new Error("Method not implemented.");
+        const contactsEntity = await this.contactsEntityRepository.findOneByPhoneNumber(phoneNumber);
+        return this.toContacts(contactsEntity);
     }
-    async updateNumber(name: string): Promise<void> {
-        throw new Error("Method not implemented.");
+    async updateNumber(name: string,phoneNumber:string): Promise<void> {
+        await this.contactsEntityRepository.update({name : name},{phoneNumber : phoneNumber});
     }
     async deleteByNumber(phoneNumber: string): Promise<void> {
-        throw new Error("Method not implemented.");
+        await this.contactsEntityRepository.delete({phoneNumber:phoneNumber});
     }
 
     
