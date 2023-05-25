@@ -6,7 +6,7 @@ import { Repository } from "typeorm";
 import { ContactsEntityModel } from "../models/contactsEntity.model";
 
 @Injectable()
-export class contactsRepository implements contactsRepositoryModel{
+export class ContactsRepository implements contactsRepositoryModel{
     constructor(
         @InjectRepository(Contacts)
         private readonly contactsEntityRepository: Repository<Contacts>,
