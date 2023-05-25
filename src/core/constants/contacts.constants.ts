@@ -1,1 +1,0 @@
-export const CONTACTS_REPOSITORY_TOKEN = 'OtpRepository';
