@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ContactsService } from './contacts.usecase';
+import { getAllContactsUsecase } from './getAllContacts.usecase';
 
 @Module({
-  providers: [ContactsService]
+  providers: [getAllContactsUsecase]
 })
 export class ContactsModule {}
