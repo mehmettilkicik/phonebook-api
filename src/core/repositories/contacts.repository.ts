@@ -16,7 +16,7 @@ export class ContactsRepository implements contactsRepositoryModel{
         await this.contactsEntityRepository.insert(contactsEntity);
     }
     
-    async findall(): Promise<ContactsEntityModel[]> {
+    async findAll(): Promise<ContactsEntityModel[]> {
         const allcontactsEntity = await this.contactsEntityRepository.find();
         return allcontactsEntity.map((contactsEntity) => this.toContacts(contactsEntity));
     }

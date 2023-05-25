@@ -1,7 +1,7 @@
 import { ContactsEntityModel } from "./contactsEntity.model";
 export interface contactsRepositoryModel{
     insert(contacts:ContactsEntityModel):Promise<void>;
-    findall(): Promise<ContactsEntityModel[]>;
+    findAll(): Promise<ContactsEntityModel[]>;
     findByName(name:string): Promise<ContactsEntityModel>;
     findByNumber(phoneNumber:string): Promise<ContactsEntityModel>;
     updateNumber(name:string,phoneNumber:string): Promise<void>;

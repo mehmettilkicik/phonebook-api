@@ -7,7 +7,7 @@ export class getAllContactsUsecase {
     constructor(private readonly contactsRepository: ContactsRepository){}
     
     async execute():Promise<ContactsEntityModel[]>{
-        return await this.contactsRepository.findall();
+        return await this.contactsRepository.findAll();
     }
 }
 
