@@ -1,4 +1,6 @@
 import { Controller } from '@nestjs/common';
+import { GetAllContactsUsecase } from 'src/usecases/contacts/getAllContacts.usecase';
 
-@Controller('controllers')
-export class ContactsController {}
+@Controller('contacts')
+export class ContactsController {
+}
