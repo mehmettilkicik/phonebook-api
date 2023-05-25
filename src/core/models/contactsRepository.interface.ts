@@ -1,9 +1,9 @@
-import { contactsEntityModel } from "./contactsEntity.interface";
+import { ContactsEntityModel } from "./contactsEntity.model";
 export interface contactsRepositoryModel{
-    insert(contacts:contactsEntityModel):Promise<void>;
-    findall(): Promise<contactsEntityModel[]>;
-    findByName(name:string): Promise<contactsEntityModel>;
-    findByNumber(phoneNumber:string): Promise<contactsEntityModel>;
+    insert(contacts:ContactsEntityModel):Promise<void>;
+    findall(): Promise<ContactsEntityModel[]>;
+    findByName(name:string): Promise<ContactsEntityModel>;
+    findByNumber(phoneNumber:string): Promise<ContactsEntityModel>;
     updateNumber(name:string): Promise<void>;
     deleteByNumber(phoneNumber:string): Promise<void>;
 }
