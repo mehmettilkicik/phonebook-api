@@ -5,9 +5,11 @@ import { GetAllContactsUsecase } from './getAllContacts.usecase';
 import { GetContactsByNameUsecase } from './getContactsByName.usecase';
 import { GetContactsByNumberUsecase } from './getContactsByNumber.usecase';
 import { UpdateContactsNumberUsecase } from './updateContactsNumber.usecase';
+import { ContactsController } from 'src/controllers/contacts.controller';
 
 @Module({
   providers: [CreateContactsUsecase, DeleteContactsUsecase, GetAllContactsUsecase,
-     GetContactsByNameUsecase, GetContactsByNumberUsecase, UpdateContactsNumberUsecase]
+     GetContactsByNameUsecase, GetContactsByNumberUsecase, UpdateContactsNumberUsecase],
+     controllers: [ContactsController]  
 })
 export class ContactsModule {}
