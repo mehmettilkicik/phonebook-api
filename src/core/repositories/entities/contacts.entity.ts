@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 import { ContactsEntityModel } from "src/core/models/contactsEntity.model";
 
 @Entity('contacts')
-export class Contacts implements ContactsEntityModel{
+export class ContactsEntity implements ContactsEntityModel{
     @PrimaryGeneratedColumn()
     id: number;
     @Column({name:'name'})

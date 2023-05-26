@@ -1,15 +1,15 @@
 import { Injectable } from "@nestjs/common";
 import { contactsRepositoryModel } from "../models/contactsRepository.interface";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Contacts } from "./entities/contacts.entity";
+import { ContactsEntity } from "./entities/contacts.entity";
 import { Repository } from "typeorm";
 import { ContactsEntityModel } from "../models/contactsEntity.model";
 
 @Injectable()
 export class ContactsRepository implements contactsRepositoryModel{
     constructor(
-        @InjectRepository(Contacts)
-        private readonly contactsEntityRepository: Repository<Contacts>,
+        @InjectRepository(ContactsEntity)
+        private readonly contactsEntityRepository: Repository<ContactsEntity>,
     ) {}
     async insert(contacts: ContactsEntityModel): Promise<void> {
         const contactsEntity = await this.toContactsEntity(contacts);
@@ -36,7 +36,7 @@ export class ContactsRepository implements contactsRepositoryModel{
     }
 
     
-    private toContacts(contactsEntity: Contacts): ContactsEntityModel{
+    private toContacts(contactsEntity: ContactsEntity): ContactsEntityModel{
         const contacts: ContactsEntityModel = new ContactsEntityModel();
 
         contacts.id = contactsEntity.id;
@@ -50,8 +50,8 @@ export class ContactsRepository implements contactsRepositoryModel{
         return contacts;
     }
     
-    private toContactsEntity(contacts : ContactsEntityModel): Contacts{
-        const contactsEntity: Contacts = new Contacts();
+    private toContactsEntity(contacts : ContactsEntityModel): ContactsEntity{
+        const contactsEntity: ContactsEntity = new ContactsEntity();
 
         contactsEntity.name = contacts.name;
         contactsEntity.phoneNumber = contacts.phoneNumber;
