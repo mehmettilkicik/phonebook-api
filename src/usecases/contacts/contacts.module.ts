@@ -17,7 +17,7 @@ const ENTITIES = {
 @Module({
     imports:[TypeOrmModule.forFeature(ENTITIES.SQLITE)],
     providers: [CreateContactsUsecase, DeleteContactsUsecase, GetAllContactsUsecase,
-     GetContactsByNameUsecase, GetContactsByNumberUsecase, UpdateContactsNumberUsecase],
+     GetContactsByNameUsecase, GetContactsByNumberUsecase, UpdateContactsNumberUsecase,ContactsRepository],
     controllers: [ContactsController],  
     exports:[ContactsRepository]
 })
