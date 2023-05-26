@@ -8,7 +8,8 @@ import { ContactsModule } from './usecases/contacts/contacts.module';
     "type": "sqlite",
     "database": "phonebook.sqlite",
     "entities": ["src/**/*.entity{.ts,.js}"],
-    "synchronize": true
+    "synchronize": true,
+    "autoLoadEntities": true
   }
   ), ContactsModule],
 })
