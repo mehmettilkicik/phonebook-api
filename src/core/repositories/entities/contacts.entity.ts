@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { ContactsEntityModel } from "src/core/models/contactsEntity.model";
 
-@Entity('contacts')
+@Entity()
 export class Contacts implements ContactsEntityModel{
     @PrimaryGeneratedColumn()
     id: number;
