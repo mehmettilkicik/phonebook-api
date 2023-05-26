@@ -1,5 +1,5 @@
 import { ContactsEntityModel } from "./contactsEntity.model";
-export interface contactsRepositoryModel{
+export interface ContactsRepositoryModel{
     insert(contacts:ContactsEntityModel):Promise<void>;
     findAll(): Promise<ContactsEntityModel[]>;
     findByName(name:string): Promise<ContactsEntityModel>;
