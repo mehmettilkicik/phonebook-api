@@ -53,7 +53,6 @@ export class ContactsRepository implements contactsRepositoryModel{
     private toContactsEntity(contacts : ContactsEntityModel): Contacts{
         const contactsEntity: Contacts = new Contacts();
 
-        contactsEntity.id = contacts.id;
         contactsEntity.name = contacts.name;
         contactsEntity.phoneNumber = contacts.phoneNumber;
 
