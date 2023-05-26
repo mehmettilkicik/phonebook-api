@@ -1,7 +1,0 @@
-{
-    "type": "sqlite",
-    "database": "phonebook.db",
-    "entities": [],
-    "synchronize": true
-
-  }

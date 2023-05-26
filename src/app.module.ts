@@ -7,7 +7,7 @@ import { ContactsModule } from './usecases/contacts/contacts.module';
     {
     "type": "sqlite",
     "database": "phonebook.db",
-    "entities": [],
+    entities: [__dirname + '/**/*.entity{.ts,.js}'],
     "synchronize": true,
   }
   ), 

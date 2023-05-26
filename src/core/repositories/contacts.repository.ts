@@ -11,22 +11,18 @@ export class ContactsRepository implements contactsRepositoryModel{
         @InjectRepository(ContactsEntity)
         private readonly contactsEntityRepository: Repository<ContactsEntity>,
     ) {}
-    async insert(contacts: ContactsEntityModel): Promise<void> {
-        const contactsEntity = await this.toContactsEntity(contacts);
-        await this.contactsEntityRepository.insert(contactsEntity);
+    async insert(contacts: ContactsEntity): Promise<void> {
+        await this.contactsEntityRepository.insert(contacts);
     }
     
     async findAll(): Promise<ContactsEntityModel[]> {
-        const allcontactsEntity = await this.contactsEntityRepository.find();
-        return allcontactsEntity.map((contactsEntity) => this.toContacts(contactsEntity));
+        return await this.contactsEntityRepository.find()
     }
     async findByName(name: string): Promise<ContactsEntityModel> {
-        const contactsEntity = await this.contactsEntityRepository.findOneByName(name);
-        return this.toContacts(contactsEntity);
+        return await this.contactsEntityRepository.query(name);
     }
     async findByNumber(phoneNumber: string): Promise<ContactsEntityModel> {
-        const contactsEntity = await this.contactsEntityRepository.findOneByPhoneNumber(phoneNumber);
-        return this.toContacts(contactsEntity);
+        return await this.contactsEntityRepository.query(phoneNumber);
     }
     async updateNumber(name: string,phoneNumber:string): Promise<void> {
         await this.contactsEntityRepository.update({name : name},{phoneNumber : phoneNumber});
@@ -35,29 +31,4 @@ export class ContactsRepository implements contactsRepositoryModel{
         await this.contactsEntityRepository.delete({phoneNumber:phoneNumber});
     }
 
-    
-    private toContacts(contactsEntity: ContactsEntity): ContactsEntityModel{
-        const contacts: ContactsEntityModel = new ContactsEntityModel();
-
-        contacts.id = contactsEntity.id;
-        contacts.name = contactsEntity.name;
-        contacts.phoneNumber = contactsEntity.phoneNumber;
-        contacts.createDate = contactsEntity.createDate;
-        contacts.updatedDate = contactsEntity.updatedDate;
-
-
-
-        return contacts;
-    }
-    
-    private toContactsEntity(contacts : ContactsEntityModel): ContactsEntity{
-        const contactsEntity: ContactsEntity = new ContactsEntity();
-
-        contactsEntity.name = contacts.name;
-        contactsEntity.phoneNumber = contacts.phoneNumber;
-
-
-        return contactsEntity;
-    }
-   
 }
