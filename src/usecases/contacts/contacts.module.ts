@@ -10,12 +10,9 @@ import { ContactsRepository } from 'src/core/repositories/contacts.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Contacts } from 'src/core/repositories/entities/contacts.entity';
 
-const ENTITIES = {
-  SQLITE: [Contacts]
-}
 
 @Module({
-    imports:[TypeOrmModule.forFeature(ENTITIES.SQLITE)],
+    imports:[TypeOrmModule.forFeature([Contacts])],
     providers: [CreateContactsUsecase, DeleteContactsUsecase, GetAllContactsUsecase,
      GetContactsByNameUsecase, GetContactsByNumberUsecase, UpdateContactsNumberUsecase,ContactsRepository],
     controllers: [ContactsController],  
