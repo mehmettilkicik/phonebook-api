@@ -6,7 +6,7 @@ import { ContactsModule } from './usecases/contacts/contacts.module';
   imports: [TypeOrmModule.forRoot(
     {
     "type": "sqlite",
-    "database": "phonebook.sqlite",
+    "database": "phonebook",
     "entities": ["src/**/*.entity{.ts,.js}"],
     "synchronize": true,
     "autoLoadEntities": true

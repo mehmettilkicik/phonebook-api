@@ -1,6 +1,7 @@
 {
     "type": "sqlite",
-    "database": "phonebook.db",
+    "database": "phonebook",
     "entities": ["src/**/*.entity{.ts,.js}"],
     "synchronize": true
+
   }
