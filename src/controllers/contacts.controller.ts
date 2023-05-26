@@ -9,7 +9,7 @@ import { uptime } from 'process';
 import { AddContactsDto, UpdateContactsDto} from 'src/core/dtos/Contacts.dto';
 
 
-@Controller('contacts')
+@Controller()
 export class ContactsController {
     constructor(
         private readonly getAllContactsUsecase : GetAllContactsUsecase,
