@@ -6,7 +6,7 @@ import { ContactsRepository} from 'src/core/repositories/contacts.repository';
 export class GetContactsByNumberUsecase {
     constructor(private readonly contactsRepository: ContactsRepository){}
 
-    async execute(phoneNumber:number):Promise<ContactsEntityModel>{
+    async execute(phoneNumber:string):Promise<ContactsEntityModel>{
         return await this.contactsRepository.findByNumber(phoneNumber);
     }
 }

@@ -7,7 +7,7 @@ export class UpdateContactsNumberUsecase {
     constructor(private readonly contactsRepository: ContactsRepository){}
     
     
-    async execute(name:string, phoneNumber:number): Promise<void> {
+    async execute(name:string, phoneNumber:string): Promise<void> {
         await this.contactsRepository.updateNumber(name, phoneNumber); 
       }
     }

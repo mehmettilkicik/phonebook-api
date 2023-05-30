@@ -1,7 +1,7 @@
 export class ContactsEntityModel{
     id: number;
     name: string;
-    phoneNumber: number;
+    phoneNumber: string;
     createDate: Date;
     updatedDate: Date;
 }

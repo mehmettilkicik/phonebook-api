@@ -33,7 +33,7 @@ export class ContactsController {
     }
 
     @Get('contact')
-    async getContactsByNumber(@Query('phoneNumber',ValidationPipe) phoneNumber: number){
+    async getContactsByNumber(@Query('phoneNumber',ValidationPipe) phoneNumber: string){
         const contact = await this.getContactsByNumberUsecase.execute(phoneNumber);
         return contact;
     }
@@ -46,7 +46,7 @@ export class ContactsController {
     }
 
     @Delete('contact:phoneNumber')
-    async deleteContacts(@Param('phoneNumber') phoneNumber: number){
+    async deleteContacts(@Param('phoneNumber') phoneNumber: string){
     await this.deleteContactsUsecase.execute(phoneNumber);
     return 'success';   
     }

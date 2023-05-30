@@ -7,8 +7,8 @@ export class ContactsEntity implements ContactsEntityModel{
     id: number;
     @Column()
     name: string;
-    @Column()
-    phoneNumber: number;
+    @Column({name:'phone-number'})
+    phoneNumber: string;
     @CreateDateColumn({name:'create-date'})
     createDate: Date;
     @UpdateDateColumn({name:'updated-date'})
