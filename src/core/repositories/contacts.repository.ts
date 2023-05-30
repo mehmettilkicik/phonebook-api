@@ -21,13 +21,13 @@ export class ContactsRepository implements ContactsRepositoryModel{
     async findByName(name: string): Promise<ContactsEntityModel> {
         return await this.contactsEntityRepository.findOneBy({name:name});
     }
-    async findByNumber(phoneNumber: string): Promise<ContactsEntityModel> {
+    async findByNumber(phoneNumber: number): Promise<ContactsEntityModel> {
         return await this.contactsEntityRepository.findOneBy({phoneNumber:phoneNumber});
     }
-    async updateNumber(name: string,phoneNumber:string): Promise<void> {
+    async updateNumber(name: string,phoneNumber:number): Promise<void> {
         await this.contactsEntityRepository.update({name : name},{phoneNumber : phoneNumber});
     }
-    async deleteByNumber(phoneNumber: string): Promise<void> {
+    async deleteByNumber(phoneNumber: number): Promise<void> {
         await this.contactsEntityRepository.delete({phoneNumber:phoneNumber});
     }
 

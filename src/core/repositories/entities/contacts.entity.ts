@@ -5,10 +5,10 @@ import { ContactsEntityModel } from "src/core/models/contactsEntity.model";
 export class ContactsEntity implements ContactsEntityModel{
     @PrimaryGeneratedColumn()
     id: number;
-    @Column({name:'name'})
+    @Column()
     name: string;
-    @Column({name:'phone-number'})
-    phoneNumber: string;
+    @Column()
+    phoneNumber: number;
     @CreateDateColumn({name:'create-date'})
     createDate: Date;
     @UpdateDateColumn({name:'updated-date'})

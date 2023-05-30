@@ -7,7 +7,7 @@ export class DeleteContactsUsecase {
     constructor(private readonly contactsRepository: ContactsRepository){}
     
     
-    async execute(phoneNumber: string): Promise<void> {
+    async execute(phoneNumber: number): Promise<void> {
       await this.contactsRepository.deleteByNumber(phoneNumber);
       }
     }

@@ -7,7 +7,7 @@ export class CreateContactsUsecase {
     constructor(private readonly contactsRepository: ContactsRepository){}
     
     
-    async execute(name:string,phoneNumber:string): Promise<void> {
+    async execute(name:string,phoneNumber:number): Promise<void> {
       const contacts = new ContactsEntityModel();
       contacts.name = name;
       contacts.phoneNumber = phoneNumber;

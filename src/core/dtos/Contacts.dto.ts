@@ -2,14 +2,16 @@ import { IsNotEmpty, IsString } from "class-validator";
 
 export class AddContactsDto{
     @IsNotEmpty()
+    readonly phoneNumber: number;
     @IsString()
     readonly name: string;
-    readonly phoneNumber: string;
+    
 }
 
 export class UpdateContactsDto{
     @IsNotEmpty()
+    readonly phoneNumber: number;
     @IsString()
     readonly name : string;
-    readonly phoneNumber: string;
+    
 }
